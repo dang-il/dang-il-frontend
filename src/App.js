@@ -1,6 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import LoginGoogle from "./components/LoginGoogle.js";
 import LoginKakao from "./components/LoginKakao.js";
 import MainPageBeforeLogin from "./pages/MainPageBeforeLogin.js";
@@ -21,16 +26,15 @@ const App = () => {
     setIsLogin(false);
   };
 
-const ProtectedRoute = ({ isLogin, children }) => {
-  const navigate = useNavigate();
-  if (!isLogin) {
-    return children;
-  } else {
-    navigate("/mainPage");
-    return null;
-  }
-};
-
+  const ProtectedRoute = ({ isLogin, children }) => {
+    const navigate = useNavigate();
+    if (!isLogin) {
+      return children;
+    } else {
+      navigate("/mainPage");
+      return null;
+    }
+  };
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL} >
