@@ -171,10 +171,10 @@
 .image-container {
   position: fixed;
   overflow: hidden;
-  width: 500px;
+  width: 35%;
   height: 490px;
-  top: 72px;
-  right: 62px;
+  top: 8.7%;
+  right: 4%;
   z-index: 102;
   overflow: hidden;
 }
