@@ -1,12 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import LoginGoogle from "./components/LoginGoogle.js";
 import LoginKakao from "./components/LoginKakao.js";
 import MainPageBeforeLogin from "./pages/MainPageBeforeLogin.js";
@@ -27,17 +21,19 @@ const App = () => {
     setIsLogin(false);
   };
 
-  const ProtectedRoute = ({ isLogin, children }) => {
-    if (!isLogin) {
-      return children;
-    } else {
-      window.location.href = "/mainPage"; // 새로고침하며 페이지 이동
-      return null;
-    }
-  };
+const ProtectedRoute = ({ isLogin, children }) => {
+  const navigate = useNavigate();
+  if (!isLogin) {
+    return children;
+  } else {
+    navigate("/mainPage");
+    return null;
+  }
+};
+
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL} >
       <Routes>
         {/* 로그인된 경우엔 바로 메인페이지로 이동 */}
         <Route
