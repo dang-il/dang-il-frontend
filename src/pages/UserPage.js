@@ -42,7 +42,6 @@ const UserPage = () => {
   const desktopNightRef = useRef(null);
   const [click, setClick] = useState(false);
   const [animation, setAnimation] = useState(false);
-  const [tagbutton, settagbutton] = useState(false); //태그버튼 눌렀을때 색변환
   const [key, setKey] = useState("bHvT0SNITuU");
   const [bookName, setBookName] = useState("Book Name");
   const [bookList, setBookList] = useState([]);
@@ -55,10 +54,6 @@ const UserPage = () => {
   const [newUserId, setNewUserId] = useState(userId);
   // 이 함수는 패널에서 호출되어 SVG 상태를 업데이트함
   const [deco, setDeco] = useState(false);
-
-  // const handleSVGChange = (selectedSVG) => {
-  //   setSelectedSVG(selectedSVG);
-  // };
 
   const handleClick = (windowType) => {
     if (activeWindow == windowType) {
