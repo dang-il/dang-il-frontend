@@ -1,18 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes,
   Navigate,
-  BrowserRouter,
-  useNavigate
 } from "react-router-dom";
 import LoginGoogle from "./components/LoginGoogle.js";
 import LoginKakao from "./components/LoginKakao.js";
 import MainPageBeforeLogin from "./pages/MainPageBeforeLogin.js";
 import UserPage from "./pages/UserPage.js";
 import MainPage from "./pages/MainPage.js";
+import { prototype } from "postcss/lib/previous-map";
 
 const App = () => {
   //login
@@ -29,19 +28,19 @@ const App = () => {
   };
 
   const ProtectedRoute = ({ isLogin, children }) => {
-    const navigate = useNavigate();
     if (!isLogin) {
       return children;
     } else {
-      navigate("/mainPage");
+      window.location.href = "/mainPage"; // 새로고침하며 페이지 이동
       return null;
     }
   };
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL} >
-      <Routes>
-        {/* 로그인된 경우엔 바로 메인페이지로 이동 */}
+
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+         {/* 로그인된 경우엔 바로 메인페이지로 이동 */}
         <Route
           exact path="/"
           element={
