@@ -45,7 +45,9 @@ const App = () => {
           exact path="/"
           element={
             <ProtectedRoute isLogin={isLogin}>
-              <MainPageBeforeLogin />
+              {/* <MainPageBeforeLogin /> */}
+              {/* 임시로 로그인이 되지 않더라도 로그인 후 화면으로 이동 */}
+              <MainPage logoutHandler={logoutHandler} />
             </ProtectedRoute>
           }
         />
