@@ -1,11 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import LoginGoogle from "./components/LoginGoogle.js";
 import LoginKakao from "./components/LoginKakao.js";
 import MainPageBeforeLogin from "./pages/MainPageBeforeLogin.js";
