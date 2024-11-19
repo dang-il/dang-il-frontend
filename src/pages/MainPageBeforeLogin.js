@@ -71,59 +71,60 @@ export default function MainPageBeforeLogin() {
   };
 
   return (
-    <div className="day">
-      <DeskField
-        mode="day"
-        userData={user}
-        fieldRef={fieldRef}
-        onDoubleClick={handleDoubleClick}
-      />
+    // <div className="day">
+    //   <DeskField
+    //     mode="day"
+    //     userData={user}
+    //     fieldRef={fieldRef}
+    //     onDoubleClick={handleDoubleClick}
+    //   />
 
-      <div ref={loginContainerRef} className="login-container">
-        <button onClick={handleLogin} className="login-button-guest">
-          <FaUserCircle className="guest-icon" />
-          <span className="text-Guest">Guest</span>
-          <span className="login-divider">|</span>
-          <span className="text-Login">Log in</span>
-        </button>
-      </div>
+    //   <div ref={loginContainerRef} className="login-container">
+    //     <button onClick={handleLogin} className="login-button-guest">
+    //       <FaUserCircle className="guest-icon" />
+    //       <span className="text-Guest">Guest</span>
+    //       <span className="login-divider">|</span>
+    //       <span className="text-Login">Log in</span>
+    //     </button>
+    //   </div>
 
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-button" onClick={handleCloseModal}>
-              <AiOutlineClose size={20} />
-            </button>
-            <div className="TotalText">
-              <div className="login-text1">
-                <h2 className="you">당신이</h2>
-                <h2 className="work">일하는 시간</h2>
-              </div>
+    //   {showModal && (
+    //     <div className="modal">
+    //       <div className="modal-content">
+    //         <button className="close-button" onClick={handleCloseModal}>
+    //           <AiOutlineClose size={20} />
+    //         </button>
+    //         <div className="TotalText">
+    //           <div className="login-text1">
+    //             <h2 className="you">당신이</h2>
+    //             <h2 className="work">일하는 시간</h2>
+    //           </div>
 
-              <div className="login-text2">
-                <p className="workspace">나만의 워크 스페이스로</p>
-                <p className="invite"> 여러분을 초대합니다.</p>
-              </div>
-            </div>
-            <button className="kakao-login-button" onClick={handleKakaoLogin}>
-              <img
-                src="/images/kakao.png"
-                alt="Kakao"
-                className="login-kakao-img"
-              />
-              카카오로 시작
-            </button>
-            <button className="google-login-button" onClick={handleGoogleLogin}>
-              <img
-                src="/images/google.png"
-                alt="Google"
-                className="login-google-img"
-              />
-              구글로 시작
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
+    //           <div className="login-text2">
+    //             <p className="workspace">나만의 워크 스페이스로</p>
+    //             <p className="invite"> 여러분을 초대합니다.</p>
+    //           </div>
+    //         </div>
+    //         <button className="kakao-login-button" onClick={handleKakaoLogin}>
+    //           <img
+    //             src="/images/kakao.png"
+    //             alt="Kakao"
+    //             className="login-kakao-img"
+    //           />
+    //           카카오로 시작
+    //         </button>
+    //         <button className="google-login-button" onClick={handleGoogleLogin}>
+    //           <img
+    //             src="/images/google.png"
+    //             alt="Google"
+    //             className="login-google-img"
+    //           />
+    //           구글로 시작
+    //         </button>
+    //       </div>
+    //     </div>
+    //   )}
+    // </div>
+    <div>hi</div>
   );
 }
