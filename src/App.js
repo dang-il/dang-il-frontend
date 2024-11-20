@@ -31,7 +31,7 @@ const App = () => {
     if (!isLogin) {
       return children;
     } else {
-      window.location.href = "/mainPage"; // 새로고침하며 페이지 이동
+      window.location.href = "/dang-il-frontend/mainPage"; // 새로고침하며 페이지 이동
       return null;
     }
   };
