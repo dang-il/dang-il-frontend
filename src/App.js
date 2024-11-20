@@ -4,7 +4,7 @@ import {
   BrowserRouter,
   Route,
   Routes,
-  Navigate,
+  useNavigate
 } from "react-router-dom";
 import LoginGoogle from "./components/LoginGoogle.js";
 import LoginKakao from "./components/LoginKakao.js";
@@ -28,13 +28,16 @@ const App = () => {
   };
 
   const ProtectedRoute = ({ isLogin, children }) => {
+    const navigate = useNavigate();
+  
     if (!isLogin) {
       return children;
     } else {
-      window.location.href = "/dang-il-frontend/mainPage"; // 새로고침하며 페이지 이동
+      navigate("/mainPage"); // 페이지 이동
       return null;
     }
   };
+  
 
   return (
 
