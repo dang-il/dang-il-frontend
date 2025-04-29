@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dang-il-frontend/static/css/main.6548559d.css",
-    "main.js": "/dang-il-frontend/static/js/main.22bd7ff8.js",
+    "main.js": "/dang-il-frontend/static/js/main.d2e8e417.js",
     "static/media/background.png": "/dang-il-frontend/static/media/background.89eb770de1189fca381d.png",
     "static/media/backNight.png": "/dang-il-frontend/static/media/backNight.7e6d5287bbec73a719c6.png",
     "static/media/Roboto-Regular.eot": "/dang-il-frontend/static/media/Roboto-Regular.bba8f9094e180108d1bf.eot",
@@ -21,10 +21,10 @@
     "static/media/modernBulletinN.png": "/dang-il-frontend/static/media/modernBulletinN.50d5674fc5cf10f009bc.png",
     "index.html": "/dang-il-frontend/index.html",
     "main.6548559d.css.map": "/dang-il-frontend/static/css/main.6548559d.css.map",
-    "main.22bd7ff8.js.map": "/dang-il-frontend/static/js/main.22bd7ff8.js.map"
+    "main.d2e8e417.js.map": "/dang-il-frontend/static/js/main.d2e8e417.js.map"
   },
   "entrypoints": [
     "static/css/main.6548559d.css",
-    "static/js/main.22bd7ff8.js"
+    "static/js/main.d2e8e417.js"
   ]
 }
