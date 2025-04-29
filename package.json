@@ -35,8 +35,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "copy-worker": "node copy-worker.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run copy-worker && react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",

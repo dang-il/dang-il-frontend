@@ -16,10 +16,14 @@ import closeBtn from "../assets/close.png";
 import { updateBook, writeBook } from "../utils/bookData";
 
 // 워커 파일 경로 설정
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+if (process.env.NODE_ENV === "production") {
+  pdfjs.GlobalWorkerOptions.workerSrc = `/dang-il-frontend/pdf.worker.min.mjs`;
+} else {
+  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    "pdfjs-dist/build/pdf.worker.min.mjs",
+    import.meta.url
+  ).toString();
+}
 
 const Book = forwardRef(
   (
