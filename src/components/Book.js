@@ -43,7 +43,7 @@ const Book = forwardRef(
   ) => {
     const [numPages, setNumPages] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
-    const fileInputRef = useRef(null);
+    const [fileUrl, setFileUrl] = useState(null);
     const [fileOpen, setFileOpen] = useState(false);
 
     const color1 = ["#47548F", 0];
@@ -52,21 +52,21 @@ const Book = forwardRef(
     const color4 = ["#756885", 3];
 
     // 파일 선택 함수
+    // 파일 선택 시 (Blob URL은 만들지 않음)
     const onFileSelect = (e) => {
-      const file = e.target.files[0]; // 파일 객체 가져오기
+      const file = e.target.files[0];
       if (file) {
-        setSelectedFile(file); // 선택된 파일 상태로 저장
+        setSelectedFile(file); // 선택만 저장
         setFileName(file.name);
       }
     };
 
     // 파일 불러오기 함수 (버튼을 눌렀을 때 호출)
     const onFileLoad = () => {
-      console.log(selectedFile);
       if (selectedFile) {
-        const fileURL = URL.createObjectURL(selectedFile); // PDF 파일의 URL 생성
-        setFile(fileURL);
-        setFileOpen(false); // 파일 창 닫기
+        const fileURL = URL.createObjectURL(selectedFile);
+        setFile(fileURL); // fileUrl이 아니라 file에 저장 (렌더링용)
+        setFileOpen(false); // 파일창 닫기
       }
     };
 
@@ -165,10 +165,6 @@ const Book = forwardRef(
       }
     };
 
-    // 책내용 저장
-    const bookTextChange = (event) => {
-      setNoteDescription(event.target.value);
-    };
     // 책내용 엔터
     const bookTextEnter = async (event) => {
       if (event.key === "Enter" && !event.shiftKey) {
@@ -357,16 +353,13 @@ const Book = forwardRef(
               {/* 선택된 파일이 있을 때 PDF 문서 렌더링 */}
               {file && (
                 <div>
-                  <Document
-                    file={selectedFile}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                  >
-                    {Array.from(new Array(numPages), (el, index) => (
-                      <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                  <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+                    {Array.from({ length: numPages }, (_, index) => (
+                      <Page key={index + 1} pageNumber={index + 1} />
                     ))}
                   </Document>
                 </div>
-              )}
+              )} 
 
               <textarea
                 value={write}
