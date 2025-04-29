@@ -357,7 +357,10 @@ const Book = forwardRef(
               {/* 선택된 파일이 있을 때 PDF 문서 렌더링 */}
               {file && (
                 <div>
-                  <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+                  <Document
+                    file={selectedFile}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                  >
                     {Array.from(new Array(numPages), (el, index) => (
                       <Page key={`page_${index + 1}`} pageNumber={index + 1} />
                     ))}
